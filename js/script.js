@@ -15,9 +15,26 @@ addEventListener('load', () => {
         target.classList.toggle('is-active')
 
       })
-
     })
-
   }
+
+
+  const tabs = document.querySelectorAll('.tabs li')
+
+  if ( tabs.length > 0 ) {
+    
+    tabs.forEach( tab => {
+      
+      tab.addEventListener('click', () => {
+        if( !tab.classList.contains('is-active') ) {
+          
+          document.querySelector('.is-active').classList.remove('is-active')
+          tab.classList.add('is-active')
+        }
+      })
+    })
+  }
+
+
 
 })
