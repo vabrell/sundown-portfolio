@@ -63,9 +63,9 @@
   </nav>
 
   <div class="container">
-    <div class="tabs is-toggle-dekstop is-centered is-small">
+    <div class="tabs is-centered is-small">
       <ul>
-        <li class="is-active">
+        <li role="button" data-target="code" class="is-active">
           <a>
             <span class="icon is-small">
               <i class="mdi mdi-24px mdi-xml"></i>
@@ -73,7 +73,7 @@
             <span class="is-size-7">Språk/Ramverk</span>
           </a>
         </li>
-        <li>
+        <li role="button" data-target="education">
           <a>
             <span class="icon is-small">
               <i class="mdi mdi-24px mdi-school"></i>
@@ -81,7 +81,7 @@
             <span class="is-size-7">Utbildning</span>
           </a>
         </li>
-        <li>
+        <li role="button" data-target="work">
           <a>
             <span class="icon is-small">
               <i class="mdi mdi-24px mdi-briefcase"></i>
@@ -93,53 +93,63 @@
     </div>
   </div>
 
-  <section class="section">
-    <div class="container columns">
-      <div class="column">
-
-        <div class="skill">
-          <span class="icon is-medium has-text-primary">
-            <i class="mdi mdi-36px mdi-language-html5 is-primary"></i>
-          </span>
-          HTML5
-        </div>
-        <div class="skill">
-          <span class="icon is-medium has-text-primary">
-            <i class="mdi mdi-36px mdi-language-css3"></i>
-          </span>
-          CSS3
-        </div>
-        <div class="skill">
-          <span class="icon is-medium has-text-primary">
-            <i class="mdi mdi-36px mdi-language-javascript"></i>
-          </span>
-          JavaScript
-        </div>
-        <div class="skill">
-          <span class="icon is-medium has-text-primary">
-            <i class="mdi mdi-36px mdi-vuejs"></i>
-          </span>
-          VueJS
-        </div>
-        <div class="skill">
-          <span class="icon is-medium has-text-primary">
-            <i class="mdi mdi-36px mdi-language-php"></i>
-          </span>
-          PHP
-        </div>
-        <div class="skill">
-          <span class="icon is-medium has-text-primary">
-            <i class="mdi mdi-36px mdi-laravel"></i>
-          </span>
-          Laravel
+  <section id="code" class="section">
+    <div class="columns is-multiline">
+      <div class="column has-text-centered is-one-quarter-tablet">
+        <span class="icon is-medium has-text-primary">
+          <i class="mdi mdi-48px mdi-language-html5 is-primary"></i>
         </span>
-        <div class="skill">
-          <span class="icon is-medium has-text-primary">
-            <i class="mdi mdi-36px mdi-wordpress"></i>
-          </span>
-          Wordpress
-        </div>
+        <h3 class="title is-5">HTML5</h3>
       </div>
+      <div class="column has-text-centered is-one-quarter-tablet">
+        <span class="icon is-medium has-text-primary">
+          <i class="mdi mdi-48px mdi-language-css3"></i>
+        </span>
+        <h3 class="title is-5">CSS3</h3>
+      </div>
+      <div class="column has-text-centered is-one-quarter-tablet">
+        <span class="icon is-medium has-text-primary">
+          <i class="mdi mdi-48px mdi-language-javascript"></i>
+        </span>
+        <h3 class="title is-5">JavaScript</h3>
+      </div>
+      <div class="column has-text-centered is-one-quarter-tablet">
+        <span class="icon is-medium has-text-primary">
+          <i class="mdi mdi-48px mdi-vuejs"></i>
+        </span>
+        <h3 class="title is-5">VueJS</h3>
+      </div>
+      <div class="column has-text-centered is-one-quarter-tablet">
+        <span class="icon is-medium has-text-primary">
+          <i class="mdi mdi-36px mdi-language-php"></i>
+        </span>
+        <h3 class="title is-5">PHP</h3>
+      </div>
+      <div class="column has-text-centered is-one-quarter-tablet">
+        <span class="icon is-medium has-text-primary">
+          <i class="mdi mdi-48px mdi-laravel"></i>
+        </span>
+        <h3 class="title is-5">Laravel</h3>
+        </span>
+      </div>
+      <div class="column has-text-centered is-one-quarter-tablet">
+        <span class="icon is-medium has-text-primary">
+          <i class="mdi mdi-48px mdi-wordpress"></i>
+        </span>
+        <h3 class="title is-5">Wordpress</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <div class="container">
+      <h1 class="title">Utbildning</h1>
+    </div>
+  </section>
+
+  <section id="work" class="section">
+    <div class="container">
+      <h1 class="title">Anställningar</h1>
     </div>
   </section>
 
