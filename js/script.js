@@ -22,13 +22,6 @@ addEventListener('load', () => {
   const tabs = document.querySelectorAll('.tabs li')
 
   if ( tabs.length > 0 ) {
-
-    document.querySelectorAll('section').forEach(section => {
-      if(document.querySelector('.is-active').dataset.target !== section.id) {
-        section.style.display = 'none'
-      }
-    })
-
     
     tabs.forEach( tab => {
       
@@ -39,10 +32,10 @@ addEventListener('load', () => {
           
           document.querySelector('.is-active').classList.remove('is-active')
           document.querySelectorAll('section').forEach(section => {
-            section.style.display = 'none'
+            section.classList.add('is-hidden')
           })
 
-          document.querySelector(`#${dataTarget}`).style.display = 'block'
+          document.querySelector(`#${dataTarget}`).classList.remove('is-hidden')
           tab.classList.add('is-active')
         }
       })
