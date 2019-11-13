@@ -3,6 +3,7 @@ $link: $primary;
 $title-color: $primary;
 
 @import './bulma-0.8.0/bulma.sass';
+@import './bulma-0.8.0/sass/timeline/bulma-timeline.sass';
 
 .social {
   display: inline-block;
