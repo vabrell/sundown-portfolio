@@ -12618,4 +12618,8 @@ label.panel-block:hover {
 .social {
   display: inline-block;
 }
+
+.about-list > li {
+  margin-bottom: 1rem;
+}
 /*# sourceMappingURL=bulma.custom.css.map */
