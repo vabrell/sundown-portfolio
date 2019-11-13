@@ -11851,12 +11851,6 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
-html,
-body {
-  height: 100%;
-  background-color: white;
-}
-
 .social {
   display: inline-block;
 }
