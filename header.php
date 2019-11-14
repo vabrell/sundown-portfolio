@@ -17,7 +17,7 @@
 
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="index.html">
+      <a class="navbar-item" href="<?php home_url(); ?>">
         <img src="<?php echo get_template_directory_uri(); ?>/img/logo_name.png"
           alt="Logo Victor Abrell">
       </a>
@@ -32,9 +32,9 @@
     <div id="primary-menu" class="navbar-menu">
 
       <div class="navbar-start has-text-weight-semibold">
-        <a href="projekt.html" class="navbar-item ">Projekt</a>
-        <a href="cv.html" class="navbar-item ">CV</a>
-        <a href="ommig.html" class="navbar-item ">Om mig</a>
+        <?php
+        sundown_primary_menu();
+        ?>
       </div>
 
       <div class="navbar-end">
