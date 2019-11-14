@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="sv" class="has-background-white-bis">
+<html lang="<?php echo get_locale(); ?>" class="has-background-white-bis">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Portfolio</title>
-
-  <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/logo.png" type="image/x-icon">
-
+  <title><?php bloginfo('name'); ?></title>
 
   <?php
   wp_head();
@@ -19,7 +16,9 @@
     <div class="navbar-brand">
       <a class="navbar-item" href="<?php home_url(); ?>">
         <img src="<?php echo wp_get_attachment_url(get_theme_mod('sundown_header_image')); ?>"
-          alt="Logo Victor Abrell">
+          alt="<?php
+          echo get_post_meta(get_theme_mod('sundown_header_image'))['_wp_attachment_image_alt'][0]
+          ?>">
       </a>
 
       <a role="button" class="navbar-burger" data-target="primary-menu" aria-label="menu" aria-expanded="false">
