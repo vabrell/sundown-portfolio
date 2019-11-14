@@ -2,8 +2,9 @@ $primary: rgb(206, 65, 65);
 $link: $primary;
 $title-color: $primary;
 
-@import './bulma-0.8.0/bulma.sass';
-@import './bulma-0.8.0/sass/timeline/bulma-timeline.sass';
+@import '../node_modules/bulma/bulma.sass';
+@import '../node_modules/bulma-timeline/src/sass/index.sass';
+@import '../node_modules/@mdi/font/scss/materialdesignicons.scss';
 
 .social {
   display: inline-block;
