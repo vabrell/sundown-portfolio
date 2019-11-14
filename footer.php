@@ -6,7 +6,10 @@
       ?>
 
       <p class="copyright">
-        © <a href="https://abrell.se">Victor Abrell</a> 2019
+        Wordpress Theme <a href="https://github.com/vabrell/sundown-portfolio">Sundown-Portfolio</a>
+        <p>
+          © <a href="https://abrell.se">Victor Abrell</a> 2019
+        </p>
       </p>
     </div>
   </footer>
