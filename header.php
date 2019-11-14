@@ -18,7 +18,7 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="<?php home_url(); ?>">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/logo_name.png"
+        <img src="<?php echo wp_get_attachment_url(get_theme_mod('sundown_header_image')); ?>"
           alt="Logo Victor Abrell">
       </a>
 
