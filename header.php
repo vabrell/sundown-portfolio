@@ -14,7 +14,7 @@
 
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="<?php home_url(); ?>">
+      <a class="navbar-item" href="<?php echo home_url(); ?>">
         <img src="<?php echo wp_get_attachment_url(get_theme_mod('sundown_header_image')); ?>"
           alt="<?php
           echo get_post_meta(get_theme_mod('sundown_header_image'))['_wp_attachment_image_alt'][0]
