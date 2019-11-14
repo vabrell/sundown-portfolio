@@ -56,7 +56,7 @@ get_header();
         <div class="timeline-marker <?php echo $color; ?>"></div>
         <div class="timeline-content">
           <p class="heading">
-            <?php echo $post_meta['title']; ?> <?php echo $post_meta['start'] . $end; ?>
+            <?php echo $post_meta['title']; ?> <?php echo '[' . $post_meta['start'] . $end . ']'; ?>
           </p>
           <p>
             <?php
