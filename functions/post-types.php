@@ -26,4 +26,15 @@ function sundown_register_post_types() {
       'pages' => false
     ]
   ]);
+
+  register_post_type('project', [
+    'label' => __('Project'),
+    'labels' => __('Projects'),
+    'public' => true,
+    'menu_icon' => 'dashicons-hammer',
+    'supports' => ['title'],
+    'rewrite' => [
+      'pages' => false
+    ]
+  ]);
 }
