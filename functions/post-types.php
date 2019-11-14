@@ -32,7 +32,10 @@ function sundown_register_post_types() {
     'labels' => __('Projects'),
     'public' => true,
     'menu_icon' => 'dashicons-hammer',
-    'supports' => ['title'],
+    'supports' => [
+      'title',
+      'thumbnail'
+    ],
     'rewrite' => [
       'pages' => false
     ]
