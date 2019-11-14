@@ -9,7 +9,8 @@
  * Register boxes
  */
 
-function sundown_register_meta_boxes() {
+function sundown_register_meta_boxes()
+{
   // Education
   add_meta_box(
     'sundown_education',
@@ -18,12 +19,20 @@ function sundown_register_meta_boxes() {
     'education'
   );
 
-  // Education
+  // Employment
   add_meta_box(
     'sundown_employment',
     __('Employment'),
     'sundown_employment_markup',
     'employment'
+  );
+
+  // Project
+  add_meta_box(
+    'sundown_project',
+    __('Project'),
+    'sundown_project_markup',
+    'project'
   );
 }
 
@@ -31,7 +40,8 @@ function sundown_register_meta_boxes() {
  * Defaults
  */
 
-function sundown_education_defaults() {
+function sundown_education_defaults()
+{
   return [
     'title' => '',
     'start' => '',
@@ -40,12 +50,23 @@ function sundown_education_defaults() {
   ];
 }
 
-function sundown_employment_defaults() {
+function sundown_employment_defaults()
+{
   return [
     'title' => '',
     'start' => '',
     'end' => '',
     'description' => ''
+  ];
+}
+
+function sundown_project_defaults()
+{
+  return [
+    'title' => '',
+    'description' => '',
+    'github' => '',
+    'preview' => '',
   ];
 }
 
@@ -53,8 +74,9 @@ function sundown_employment_defaults() {
  * Markup
  */
 
-function sundown_education_markup($post) {
-  
+function sundown_education_markup($post)
+{
+
   $saved_data = get_post_meta($post->ID, 'sundown_education', true);
   $defaults = sundown_education_defaults();
   $details = wp_parse_args($saved_data, $defaults);
@@ -68,10 +90,7 @@ function sundown_education_markup($post) {
         <label class="label"><?php echo __('Education'); ?></label>
       </div>
       <div class="field-body">
-        <input type="text"
-              name="sundown_education[title]"
-              class="input"
-              value="<?php echo esc_attr($details['title']); ?>">
+        <input type="text" name="sundown_education[title]" class="input" value="<?php echo esc_attr($details['title']); ?>">
       </div>
     </div>
 
@@ -80,10 +99,7 @@ function sundown_education_markup($post) {
         <label class="label"><?php echo __('Start'); ?></label>
       </div>
       <div class="field-body">
-        <input type="text"
-              name="sundown_education[start]"
-              class="input"
-              value="<?php echo esc_attr($details['start']); ?>">
+        <input type="text" name="sundown_education[start]" class="input" value="<?php echo esc_attr($details['start']); ?>">
       </div>
     </div>
 
@@ -92,10 +108,7 @@ function sundown_education_markup($post) {
         <label class="label"><?php echo __('End'); ?></label>
       </div>
       <div class="field-body">
-        <input type="text"
-              name="sundown_education[end]"
-              class="input"
-              value="<?php echo esc_attr($details['end']); ?>">
+        <input type="text" name="sundown_education[end]" class="input" value="<?php echo esc_attr($details['end']); ?>">
       </div>
     </div>
 
@@ -111,16 +124,17 @@ function sundown_education_markup($post) {
 
   </fieldset>
 
-  <?php
+<?php
 
   // Security field
-  wp_nonce_field( 'sundown_form_metabox_nonce', 'sundown_form_metabox_process' );
+  wp_nonce_field('sundown_form_metabox_nonce', 'sundown_form_metabox_process');
 }
 
-function sundown_employment_markup($post) {
-  
+function sundown_employment_markup($post)
+{
+
   $saved_data = get_post_meta($post->ID, 'sundown_employment', true);
-  $defaults = sundown_education_defaults();
+  $defaults = sundown_employment_defaults();
   $details = wp_parse_args($saved_data, $defaults);
 
   ?>
@@ -132,10 +146,7 @@ function sundown_employment_markup($post) {
         <label class="label"><?php echo __('Employment'); ?></label>
       </div>
       <div class="field-body">
-        <input type="text"
-              name="sundown_employment[title]"
-              class="input"
-              value="<?php echo esc_attr($details['title']); ?>">
+        <input type="text" name="sundown_employment[title]" class="input" value="<?php echo esc_attr($details['title']); ?>">
       </div>
     </div>
 
@@ -144,10 +155,7 @@ function sundown_employment_markup($post) {
         <label class="label"><?php echo __('Start'); ?></label>
       </div>
       <div class="field-body">
-        <input type="text"
-              name="sundown_employment[start]"
-              class="input"
-              value="<?php echo esc_attr($details['start']); ?>">
+        <input type="text" name="sundown_employment[start]" class="input" value="<?php echo esc_attr($details['start']); ?>">
       </div>
     </div>
 
@@ -156,10 +164,7 @@ function sundown_employment_markup($post) {
         <label class="label"><?php echo __('End'); ?></label>
       </div>
       <div class="field-body">
-        <input type="text"
-              name="sundown_employment[end]"
-              class="input"
-              value="<?php echo esc_attr($details['end']); ?>">
+        <input type="text" name="sundown_employment[end]" class="input" value="<?php echo esc_attr($details['end']); ?>">
       </div>
     </div>
 
@@ -175,34 +180,93 @@ function sundown_employment_markup($post) {
 
   </fieldset>
 
-  <?php
+<?php
 
   // Security field
-  wp_nonce_field( 'sundown_form_metabox_nonce', 'sundown_form_metabox_process' );
+  wp_nonce_field('sundown_form_metabox_nonce', 'sundown_form_metabox_process');
+}
+
+function sundown_project_markup($post)
+{
+
+  $saved_data = get_post_meta($post->ID, 'sundown_project', true);
+  $defaults = sundown_project_defaults();
+  $details = wp_parse_args($saved_data, $defaults);
+
+  ?>
+
+  <fieldset>
+
+    <div class="field">
+      <div class="field-label has-text-left">
+        <label class="label"><?php echo __('Project'); ?></label>
+      </div>
+      <div class="field-body">
+        <input type="text" name="sundown_project[title]" class="input" value="<?php echo esc_attr($details['title']); ?>">
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label has-text-left">
+        <label class="label"><?php echo __('Description'); ?></label>
+      </div>
+      <div class="field-body">
+        <textarea name="sundown_project[description]" class="textarea is-grey"><?php echo esc_attr($details['description']); ?></textarea>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label has-text-left">
+        <label class="label"><?php echo __('Github URL'); ?></label>
+      </div>
+      <div class="field-body">
+        <input type="url" name="sundown_project[github]" class="input" value="<?php echo esc_attr($details['github']); ?>">
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label has-text-left">
+        <label class="label"><?php echo __('Preview URL'); ?></label>
+      </div>
+      <div class="field-body">
+        <input type="url" name="sundown_project[preview]" class="input" value="<?php echo esc_attr($details['preview']); ?>">
+      </div>
+    </div>
+
+
+
+
+  </fieldset>
+
+<?php
+
+  // Security field
+  wp_nonce_field('sundown_form_metabox_nonce', 'sundown_form_metabox_process');
 }
 
 /**
  * Save data
  */
 
-function sundown_save_education( $post_id, $post ) {
+function sundown_save_education($post_id, $post)
+{
 
   // Verify that our security field exists. If not, bail.
-  if ( !isset( $_POST['sundown_form_metabox_process'] ) ) return;
+  if (!isset($_POST['sundown_form_metabox_process'])) return;
 
   // Verify data came from edit/dashboard screen
-  if ( !wp_verify_nonce( $_POST['sundown_form_metabox_process'], 'sundown_form_metabox_nonce' ) ) {
+  if (!wp_verify_nonce($_POST['sundown_form_metabox_process'], 'sundown_form_metabox_nonce')) {
     return $post->ID;
   }
   // Verify user has permission to edit post
-  if ( !current_user_can( 'edit_post', $post->ID )) {
+  if (!current_user_can('edit_post', $post->ID)) {
     return $post->ID;
   }
-  
+
   // Check that our custom fields are being passed along
   // This is the `name` value array. We can grab all
   // of the fields and their values at once.
-  if ( !isset( $_POST['sundown_education'] ) ) {
+  if (!isset($_POST['sundown_education'])) {
     return $post->ID;
   }
   /**
@@ -213,34 +277,35 @@ function sundown_save_education( $post_id, $post ) {
   $sanitized = array();
   // Loop through each of our fields
 
-  foreach ( $_POST['sundown_education'] as $key => $detail ) {
+  foreach ($_POST['sundown_education'] as $key => $detail) {
     // Sanitize the data and push it to our new array
     // `wp_filter_post_kses` strips our dangerous server values
     // and allows through anything you can include a post.
-    $sanitized[$key] = wp_filter_post_kses( $detail );
+    $sanitized[$key] = wp_filter_post_kses($detail);
   }
   // Save our submissions to the database
-  update_post_meta( $post->ID, 'sundown_education', $sanitized );
+  update_post_meta($post->ID, 'sundown_education', $sanitized);
 }
 
-function sundown_save_employment( $post_id, $post ) {
+function sundown_save_employment($post_id, $post)
+{
 
   // Verify that our security field exists. If not, bail.
-  if ( !isset( $_POST['sundown_form_metabox_process'] ) ) return;
+  if (!isset($_POST['sundown_form_metabox_process'])) return;
 
   // Verify data came from edit/dashboard screen
-  if ( !wp_verify_nonce( $_POST['sundown_form_metabox_process'], 'sundown_form_metabox_nonce' ) ) {
+  if (!wp_verify_nonce($_POST['sundown_form_metabox_process'], 'sundown_form_metabox_nonce')) {
     return $post->ID;
   }
   // Verify user has permission to edit post
-  if ( !current_user_can( 'edit_post', $post->ID )) {
+  if (!current_user_can('edit_post', $post->ID)) {
     return $post->ID;
   }
-  
+
   // Check that our custom fields are being passed along
   // This is the `name` value array. We can grab all
   // of the fields and their values at once.
-  if ( !isset( $_POST['sundown_employment'] ) ) {
+  if (!isset($_POST['sundown_employment'])) {
     return $post->ID;
   }
   /**
@@ -251,12 +316,51 @@ function sundown_save_employment( $post_id, $post ) {
   $sanitized = array();
   // Loop through each of our fields
 
-  foreach ( $_POST['sundown_employment'] as $key => $detail ) {
+  foreach ($_POST['sundown_employment'] as $key => $detail) {
     // Sanitize the data and push it to our new array
     // `wp_filter_post_kses` strips our dangerous server values
     // and allows through anything you can include a post.
-    $sanitized[$key] = wp_filter_post_kses( $detail );
+    $sanitized[$key] = wp_filter_post_kses($detail);
   }
   // Save our submissions to the database
-  update_post_meta( $post->ID, 'sundown_employment', $sanitized );
+  update_post_meta($post->ID, 'sundown_employment', $sanitized);
+}
+
+function sundown_save_project($post_id, $post)
+{
+
+  // Verify that our security field exists. If not, bail.
+  if (!isset($_POST['sundown_form_metabox_process'])) return;
+
+  // Verify data came from edit/dashboard screen
+  if (!wp_verify_nonce($_POST['sundown_form_metabox_process'], 'sundown_form_metabox_nonce')) {
+    return $post->ID;
+  }
+  // Verify user has permission to edit post
+  if (!current_user_can('edit_post', $post->ID)) {
+    return $post->ID;
+  }
+
+  // Check that our custom fields are being passed along
+  // This is the `name` value array. We can grab all
+  // of the fields and their values at once.
+  if (!isset($_POST['sundown_project'])) {
+    return $post->ID;
+  }
+  /**
+   * Sanitize all data
+   * This keeps malicious code out of our database.
+   */
+  // Set up an empty array
+  $sanitized = array();
+  // Loop through each of our fields
+
+  foreach ($_POST['sundown_project'] as $key => $detail) {
+    // Sanitize the data and push it to our new array
+    // `wp_filter_post_kses` strips our dangerous server values
+    // and allows through anything you can include a post.
+    $sanitized[$key] = wp_filter_post_kses($detail);
+  }
+  // Save our submissions to the database
+  update_post_meta($post->ID, 'sundown_project', $sanitized);
 }

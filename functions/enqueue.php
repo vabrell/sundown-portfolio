@@ -13,7 +13,12 @@ function sundown_enqueue_styles() {
 
 function sundown_admin_style() {
   global $post_type;
-  if ($post_type === 'education' || $post_type === 'employment') {
+  $post_types = [
+    'education',
+    'employment',
+    'project'
+  ];
+  if (in_array($post_type, $post_types)) {
     wp_enqueue_style(
       'sundown_admin_style',
       get_template_directory_uri() . '/css/sundown.css'

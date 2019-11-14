@@ -20,3 +20,4 @@ add_action('admin_print_styles-post-new.php', 'sundown_admin_style', 11 );
 add_action('admin_print_styles-post.php', 'sundown_admin_style', 11 );
 add_action('save_post', 'sundown_save_education', 1, 2 );
 add_action('save_post', 'sundown_save_employment', 1, 2 );
+add_action('save_post', 'sundown_save_project', 1, 2 );
