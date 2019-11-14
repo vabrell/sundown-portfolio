@@ -9,6 +9,12 @@ require 'functions/menus.php';
 // Get theme customizer
 require 'functions/customizer.php';
 
+// Get theme custom post types
+require 'functions/post-types.php';
+
+// Get theme custom post meta fields
+require 'functions/custom-meta.php';
+
 // Get theme support
 require 'functions/support.php';
 
