@@ -26,3 +26,53 @@ function sundown_primary_menu() {
 
   echo $menu_list;
 }
+
+function sundown_social_menu($is_inline = false) {
+  $theme_location = get_nav_menu_locations()['social_menu'];
+  $menu = wp_get_nav_menu_object($theme_location);
+  $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+  $menu_list = '';
+
+  foreach ($menu_items as $item) {
+    $url = $item->url;
+    
+    switch ($url) {
+      case (preg_match('/facebook/', $url) ? true : false):
+        $icon = 'mdi-facebook';
+      break;
+
+      case (preg_match('/instagram/', $url) ? true : false):
+        $icon = 'mdi-instagram';
+      break;
+
+      case (preg_match('/linkedin/', $url) ? true : false):
+        $icon = 'mdi-linkedin';
+      break;
+
+      case (preg_match('/twitter/', $url) ? true : false):
+        $icon = 'mdi-twitter';
+      break;
+
+      case (preg_match('/github/', $url) ? true : false):
+        $icon = 'mdi-github-circle';
+      break;
+
+      case (preg_match('/spotify/', $url) ? true : false):
+        $icon = 'mdi-spotify';
+      break;
+
+      default:
+        $icon = '';
+    }
+
+    $is_inline === true ? $inline = 'is-inline-block' : $inline = '' ;
+
+    $menu_list .= "<a class='navbar-item $inline' href='$url'>";
+    $menu_list .= "<span class='icon is-large'>";
+    $menu_list .= "<i class='mdi mdi-24px $icon'></i>";
+    $menu_list .= "</span></a>";
+  }
+
+  echo $menu_list;
+}

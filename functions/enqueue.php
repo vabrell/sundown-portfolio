@@ -7,7 +7,7 @@
 function sundown_enqueue_styles() {
   wp_enqueue_style(
     'sundown_portfolio_style',
-    get_template_directory_uri() . '/css/portfolio.css'
+    get_template_directory_uri() . '/css/sundown.css'
   );
 }
 

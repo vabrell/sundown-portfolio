@@ -37,21 +37,9 @@
       </div>
 
       <div class="navbar-end">
-            <a href="#" class="navbar-item social" target="_blank">
-              <span class="icon is-large">
-                <i class="mdi mdi-24px mdi-twitter"></i>
-              </span>
-            </a>
-            <a href="#" class="navbar-item social" target="_blank">
-              <span class="icon is-large">
-                <i class="mdi mdi-24px mdi-linkedin"></i>
-              </span>
-            </a>
-            <a href="#" class="navbar-item social" target="_blank">
-              <span class="icon is-large">
-                <i class="mdi mdi-24px mdi-github-circle"></i>
-              </span>
-            </a>
+        <?php
+        sundown_social_menu();
+        ?>
       </div>
 
     </div>
