@@ -18,6 +18,14 @@ msgstr "utvecklat av"
 msgid "Projects"
 msgstr "Projekt"
 
+#: template-projects.php:57
+msgid "Source code"
+msgstr "Källkod"
+
+#: template-projects.php:70
+msgid "Preview"
+msgstr "Förhandsvisning"
+
 #: template-cv.php:17
 msgid "Employments"
 msgstr "Anställningar"
