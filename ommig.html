@@ -1,46 +1,214 @@
 <!DOCTYPE html>
 <html lang="sv" class="has-background-white-bis">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Portfolio</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Portfolio</title>
+    <link rel="stylesheet" href="css/sundown.css" />
 
-  <link rel="stylesheet" href="css/bulma.custom.css">
-  <link rel="stylesheet" href="css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
 
-  <script src="js/script.js"></script>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+  </head>
 
-  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <img src="img/logo_name.png" alt="Logo Victor Abrell" />
+        </a>
 
-</head>
-
-<body>
-
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="index.html">
-        <img src="img/logo_name.png" alt="Logo Victor Abrell">
-      </a>
-
-      <a role="button" class="navbar-burger" data-target="primary-menu" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-
-    <div id="primary-menu" class="navbar-menu">
-
-      <div class="navbar-start has-text-weight-semibold">
-        <a href="projekt.html" class="navbar-item ">Projekt</a>
-        <a href="cv.html" class="navbar-item ">CV</a>
-        <a href="ommig.html" class="navbar-item ">Om mig</a>
+        <a
+          role="button"
+          class="navbar-burger"
+          data-target="primary-menu"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
 
-      <div class="navbar-end">
+      <div id="primary-menu" class="navbar-menu">
+        <div class="navbar-start has-text-weight-semibold">
+          <a href="projekt.html" class="navbar-item ">Projekt</a>
+          <a href="cv.html" class="navbar-item ">CV</a>
+          <a href="ommig.html" class="navbar-item ">Om mig</a>
+        </div>
+
+        <div class="navbar-end">
+          <a href="#" class="navbar-item social" target="_blank">
+            <span class="icon is-large">
+              <i class="mdi mdi-24px mdi-twitter"></i>
+            </span>
+          </a>
+          <a href="#" class="navbar-item social" target="_blank">
+            <span class="icon is-large">
+              <i class="mdi mdi-24px mdi-linkedin"></i>
+            </span>
+          </a>
+          <a href="#" class="navbar-item social" target="_blank">
+            <span class="icon is-large">
+              <i class="mdi mdi-24px mdi-github-circle"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="columns">
+        <div class="column">
+          <h1 class="title">Profil</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            repellat consequatur, repellendus nostrum qui, provident deserunt
+            nesciunt deleniti amet maiores quasi doloribus totam eius aliquid!
+            Consequatur voluptatibus doloremque aut illum?
+          </p>
+          <div class="section">
+            <ul class="about-list">
+              <li>
+                <h2 class="title is-5">Namn</h2>
+                <h3 class="has-text-grey subtitle is-6">Victor Abrell</h3>
+              </li>
+              <li>
+                <h2 class="title is-5">Nuvarande läge</h2>
+                <h3 class="has-text-grey subtitle is-6">
+                  Kungälv, Västra Götalands Län
+                </h3>
+              </li>
+              <li>
+                <h2 class="title is-5">Födelsedatum</h2>
+                <h3 class="has-text-grey subtitle is-6">14 Oktober 1991</h3>
+              </li>
+              <li>
+                <h2 class="title is-5">Nuvarande jobb</h2>
+                <h3 class="has-text-grey subtitle is-6">
+                  Systemtekniker, Soltak AB (tjästledig för studier)
+                </h3>
+              </li>
+              <li>
+                <h2 class="title is-5">E-post</h2>
+                <h3 class="has-text-grey subtitle is-6">victor@abrell.se</h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="column">
+          <h1 class="title">Kunskaper</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            impedit a ratione assumenda? Ipsum natus incidunt quasi magni
+            soluta, qui, quaerat quae illum quos aut repellat a ab minima
+            deleniti?
+          </p>
+          <div class="section">
+            <ul class="about-list">
+              <li>
+                <h2 class="title is-5">
+                  <span class="icon is-medium">
+                    <i class="mdi mdi-36px mdi-language-html5"></i>
+                  </span>
+                  HTML5
+                </h2>
+                <progress
+                  class="progress subtitle is-success"
+                  value="85"
+                  max="100"
+                ></progress>
+              </li>
+              <li>
+                <h2 class="title is-5">
+                  <span class="icon is-medium">
+                    <i class="mdi mdi-36px mdi-language-css3"></i>
+                  </span>
+                  CSS3
+                </h2>
+                <progress
+                  class="progress subtitle is-success"
+                  value="85"
+                  max="100"
+                ></progress>
+              </li>
+              <li>
+                <h2 class="title is-5">
+                  <span class="icon is-medium">
+                    <i class="mdi mdi-36px mdi-language-javascript"></i>
+                  </span>
+                  JavaScript
+                </h2>
+                <progress
+                  class="progress subtitle is-success"
+                  value="65"
+                  max="100"
+                ></progress>
+              </li>
+              <li>
+                <h2 class="title is-5">
+                  <span class="icon is-medium">
+                    <i class="mdi mdi-36px mdi-vuejs"></i>
+                  </span>
+                  VueJS
+                </h2>
+                <progress
+                  class="progress subtitle is-warning"
+                  value="45"
+                  max="100"
+                ></progress>
+              </li>
+              <li>
+                <h2 class="title is-5">
+                  <span class="icon is-medium">
+                    <i class="mdi mdi-36px mdi-language-php"></i>
+                  </span>
+                  PHP
+                </h2>
+                <progress
+                  class="progress subtitle is-success"
+                  value="70"
+                  max="100"
+                ></progress>
+              </li>
+              <li>
+                <h2 class="title is-5">
+                  <span class="icon is-medium">
+                    <i class="mdi mdi-36px mdi-laravel"></i>
+                  </span>
+                  Laravel
+                </h2>
+                <progress
+                  class="progress subtitle is-warning"
+                  value="45"
+                  max="100"
+                ></progress>
+              </li>
+              <li>
+                <h2 class="title is-5">
+                  <span class="icon is-medium">
+                    <i class="mdi mdi-36px mdi-wordpress"></i>
+                  </span>
+                  Wordpress
+                </h2>
+                <progress
+                  class="progress subtitle is-warning"
+                  value="65"
+                  max="100"
+                ></progress>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>© <a href="https://abrell.se">Victor Abrell</a> 2019</p>
         <a href="#" class="navbar-item social" target="_blank">
           <span class="icon is-large">
             <i class="mdi mdi-24px mdi-twitter"></i>
@@ -57,139 +225,6 @@
           </span>
         </a>
       </div>
-
-
-    </div>
-  </nav>
-
-  <section class="section">
-    <div class="columns">
-      <div class="column">
-        <h1 class="title">Profil</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium repellat consequatur, repellendus nostrum qui, provident deserunt nesciunt deleniti amet maiores quasi doloribus totam eius aliquid! Consequatur voluptatibus doloremque aut illum?</p>
-        <div class="section">
-          <ul class="about-list">
-            <li>
-              <h2 class="title is-5">Namn</h2>
-              <h3 class="has-text-grey subtitle is-6">Victor Abrell</h3>
-            </li>
-            <li>
-              <h2 class="title is-5">Nuvarande läge</h2>
-              <h3 class="has-text-grey subtitle is-6">Kungälv, Västra Götalands Län</h3>
-            </li>
-            <li>
-              <h2 class="title is-5">Födelsedatum</h2>
-              <h3 class="has-text-grey subtitle is-6">14 Oktober 1991</h3>
-            </li>
-            <li>
-              <h2 class="title is-5">Nuvarande jobb</h2>
-              <h3 class="has-text-grey subtitle is-6">Systemtekniker, Soltak AB (tjästledig för studier)</h3>
-            </li>
-            <li>
-              <h2 class="title is-5">E-post</h2>
-              <h3 class="has-text-grey subtitle is-6">victor@abrell.se</h3>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="column">
-        <h1 class="title">Kunskaper</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse impedit a ratione assumenda? Ipsum natus incidunt quasi magni soluta, qui, quaerat quae illum quos aut repellat a ab minima deleniti?</p>
-        <div class="section">
-          <ul class="about-list">
-            <li>
-              <h2 class="title is-5">
-                <span class="icon is-medium">
-                  <i class="mdi mdi-36px mdi-language-html5"></i>
-                </span>
-                HTML5
-              </h2>
-              <progress class="progress subtitle is-success" value="85" max="100"></progress>
-            </li>
-            <li>
-              <h2 class="title is-5">
-                <span class="icon is-medium">
-                  <i class="mdi mdi-36px mdi-language-css3"></i>
-                </span>
-                CSS3
-              </h2>
-              <progress class="progress subtitle is-success" value="85" max="100"></progress>
-            </li>
-            <li>
-              <h2 class="title is-5">
-                <span class="icon is-medium">
-                  <i class="mdi mdi-36px mdi-language-javascript"></i>
-                </span>
-                JavaScript
-              </h2>
-              <progress class="progress subtitle is-success" value="65" max="100"></progress>
-            </li>
-            <li>
-              <h2 class="title is-5">
-                <span class="icon is-medium">
-                  <i class="mdi mdi-36px mdi-vuejs"></i>
-                </span>
-                VueJS
-              </h2>
-              <progress class="progress subtitle is-warning" value="45" max="100"></progress>
-            </li>
-            <li>
-              <h2 class="title is-5">
-                <span class="icon is-medium">
-                  <i class="mdi mdi-36px mdi-language-php"></i>
-                </span>
-                PHP
-              </h2>
-              <progress class="progress subtitle is-success" value="70" max="100"></progress>
-            </li>
-            <li>
-              <h2 class="title is-5">
-                <span class="icon is-medium">
-                  <i class="mdi mdi-36px mdi-laravel"></i>
-                </span>
-                Laravel
-              </h2>
-              <progress class="progress subtitle is-warning" value="45" max="100"></progress>
-            </li>
-            <li>
-              <h2 class="title is-5">
-                <span class="icon is-medium">
-                  <i class="mdi mdi-36px mdi-wordpress"></i>
-                </span>
-                Wordpress
-              </h2>
-              <progress class="progress subtitle is-warning" value="65" max="100"></progress>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        © <a href="https://abrell.se">Victor Abrell</a> 2019
-      </p>
-      <a href="#" class="navbar-item social" target="_blank">
-        <span class="icon is-large">
-          <i class="mdi mdi-24px mdi-twitter"></i>
-        </span>
-      </a>
-      <a href="#" class="navbar-item social" target="_blank">
-        <span class="icon is-large">
-          <i class="mdi mdi-24px mdi-linkedin"></i>
-        </span>
-      </a>
-      <a href="#" class="navbar-item social" target="_blank">
-        <span class="icon is-large">
-          <i class="mdi mdi-24px mdi-github-circle"></i>
-        </span>
-      </a>
-    </div>
-  </footer>
-
-</body>
-
+    </footer>
+  </body>
 </html>
