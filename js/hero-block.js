@@ -1,33 +1,41 @@
-( function(blocks, element) {
+;(function(blocks, element) {
   let el = element.createElement,
-      titleStyle = {
-        color: 'rgb(206, 65, 65)'
-      }
-  
+    titleStyle = {
+      color: 'rgb(206, 65, 65)'
+    }
+
   blocks.registerBlockType('sundown/hero-block', {
-		title: 'Hero',
+    title: 'Hero',
     icon: 'format-image',
     category: 'layout',
     attributes: {
       title: {
         type: 'string',
-        source: 'children',
+        source: 'html',
         selector: 'h1'
       },
       subTitle: {
         type: 'string',
-        source: 'children',
+        source: 'html',
         selector: 'p'
-      }
-    },
-    example: {
-      attributes: {
-        title: 'Example title'
+      },
+      actionText: {
+        type: 'string',
+        source: 'html',
+        selector: 'a'
+      },
+      actionLink: {
+        type: 'string',
+        source: 'attribute',
+        selector: 'a',
+        attribute: 'href'
       }
     },
     edit: function(props) {
       let title = props.attributes.title,
-          subTitle = props.attributes.subtitle
+        subTitle = props.attributes.subTitle
+      btnText = props.attributes.actionText
+      btnLink = props.attributes.actionLink
 
       function onChangeTitle(newTitle) {
         props.setAttributes({
@@ -41,6 +49,17 @@
         })
       }
 
+      function onChangeText(newText) {
+        props.setAttributes({
+          actionText: newText.target.value
+        })
+      }
+
+      function onChangeLink(newLink) {
+        props.setAttributes({
+          actionLink: newLink.target.value
+        })
+      }
 
       return el('div', {
         className: 'hero',
@@ -54,16 +73,72 @@
                 style: titleStyle,
                 className: 'input title has-text-centered',
                 onChange: onChangeTitle,
-                value: title
+                value: title,
+                placeholder: 'Title'
               }),
-              el('input',
+              el('input', {
+                tagName: 'p',
+                className: 'input subtitle has-text-centered',
+                onChange: onChangeSubTitle,
+                value: subTitle,
+                placeholder: 'Sub title'
+              }),
+              el(
+                'div',
                 {
-                  tagName: 'p',
-                  className: 'input subtitle has-text-centered',
-                  onChange: onChangeSubTitle,
-                  value: subTitle
-                }
-              ),
+                  className: 'columns is-multiline'
+                },
+                [
+                  el(
+                    'div',
+                    {
+                      className: 'column has-text-centered is-full'
+                    },
+                    el('input', {
+                      tagName: 'a',
+                      className: 'button is-link is-outlined',
+                      value: btnText,
+                      onChange: onChangeText,
+                      placeholder: 'Button text'
+                    })
+                  ),
+                  el(
+                    'div',
+                    {
+                      className: 'column has-text-centered is-full'
+                    },
+                    el('input', {
+                      tagName: 'a',
+                      value: btnLink,
+                      onChange: onChangeLink,
+                      placeholder: 'Button link'
+                    })
+                  )
+                ]
+              )
+            ]
+          })
+        })
+      })
+    },
+    save: function(props) {
+      return el('div', {
+        className: 'hero',
+        children: el('div', {
+          className: 'hero-body',
+          children: el('div', {
+            className: 'container',
+            children: [
+              el('h1', {
+                tagName: 'h1',
+                className: 'title has-text-centered',
+                children: props.attributes.title
+              }),
+              el('p', {
+                tagName: 'p',
+                className: 'subtitle has-text-centered',
+                children: props.attributes.subTitle
+              }),
               el(
                 'div',
                 {
@@ -74,71 +149,18 @@
                   {
                     className: 'column has-text-centered is-full'
                   },
-                  el(
-                    'a',
-                    {
-                      className: 'button is-link is-outlined'
-                    },
-                    'Call to action'
-                  )
-                )
-              )
-            ]})
-          })
-        })
-    },
-    save: function(props) {
-      let title = props.attributes.title,
-          subTitle = props.attributes.subtitle
-
-      let string = el('div', {
-        className: 'hero',
-        children: el('div', {
-          className: 'hero-body',
-          children: el('div', {
-            className: 'container',
-            children: [
-              el(
-                'h1',
-                {
-                  tagName: 'h1',
-                  className: 'title has-text-centered',
-                  children: title
-                }
-              ),
-              el(
-                'p',
-                {
-                  tagName: 'p',
-                  className: 'subtitle has-text-centered',
-                  children: subTitle
-                }
-                ),
-              el(
-                'div', {
-                  className: 'columns'
-                },
-                el(
-                  'div', {
-                    className: 'column has-text-centered is-full'
-                  },
-                  el(
-                    'a', {
-                      className: 'button is-link is-outlined'
-                    },
-                    'Call to action'
-                  )
+                  el('a', {
+                    tagName: 'a',
+                    className: 'button is-link is-outlined',
+                    children: props.attributes.actionText,
+                    href: props.attributes.actionLink
+                  })
                 )
               )
             ]
           })
         })
       })
-
-      return string
     }
-	})
-}(
-  window.wp.blocks,
-  window.wp.element
-))
+  })
+})(window.wp.blocks, window.wp.element)
