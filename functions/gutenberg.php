@@ -22,6 +22,19 @@ function sundown_register_gutenberg_blocks() {
     get_template_directory_uri() . '/css/sundown.css'
   );
 
+  $translation_array = [
+    'title' => __('Title', 'sundown'),
+    'subTitle' => __('Sub title', 'sundown'),
+    'btnText' => __('Button text', 'sundown'),
+    'btnLink' => __('Button link', 'sundown')
+  ];
+
+  wp_localize_script(
+    'sundown-hero-block',
+    'local',
+    $translation_array
+  );
+
   register_block_type(
     'sundown/hero-block',
     [

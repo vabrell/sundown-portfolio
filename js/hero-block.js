@@ -74,14 +74,14 @@
                 className: 'input title has-text-centered',
                 onChange: onChangeTitle,
                 value: title,
-                placeholder: 'Title'
+                placeholder: local.title
               }),
               el('input', {
                 tagName: 'p',
                 className: 'input subtitle has-text-centered',
                 onChange: onChangeSubTitle,
                 value: subTitle,
-                placeholder: 'Sub title'
+                placeholder: local.subTitle
               }),
               el(
                 'div',
@@ -99,7 +99,7 @@
                       className: 'button is-link is-outlined',
                       value: btnText,
                       onChange: onChangeText,
-                      placeholder: 'Button text'
+                      placeholder: local.btnText
                     })
                   ),
                   el(
@@ -111,7 +111,7 @@
                       tagName: 'a',
                       value: btnLink,
                       onChange: onChangeLink,
-                      placeholder: 'Button link'
+                      placeholder: local.btnLink
                     })
                   )
                 ]

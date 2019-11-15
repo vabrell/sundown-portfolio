@@ -1,5 +1,6 @@
 <?php
 
+
 // Get theme enqueues
 require 'functions/enqueue.php';
 
@@ -23,6 +24,9 @@ require 'functions/filters.php';
 
 // Get theme gutenberg blocks
 require 'functions/gutenberg.php';
+
+// Get theme localization
+require 'functions/localization.php';
 
 // Get theme actions
 require 'functions/actions.php';

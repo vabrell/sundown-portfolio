@@ -14,7 +14,7 @@ function sundown_register_meta_boxes()
   // Education
   add_meta_box(
     'sundown_education',
-    __('Education'),
+    __('Education', 'sundown'),
     'sundown_education_markup',
     'education'
   );
@@ -22,7 +22,7 @@ function sundown_register_meta_boxes()
   // Employment
   add_meta_box(
     'sundown_employment',
-    __('Employment'),
+    __('Employment', 'sundown'),
     'sundown_employment_markup',
     'employment'
   );
@@ -30,7 +30,7 @@ function sundown_register_meta_boxes()
   // Project
   add_meta_box(
     'sundown_project',
-    __('Project'),
+    __('Project', 'sundown'),
     'sundown_project_markup',
     'project'
   );
@@ -87,7 +87,7 @@ function sundown_education_markup($post)
 
     <div class="field">
       <div class="field-label has-text-left">
-        <label class="label"><?php echo __('Education'); ?></label>
+        <label class="label"><?php _e('Education', 'sundown'); ?></label>
       </div>
       <div class="field-body">
         <input type="text" name="sundown_education[title]" class="input" value="<?php echo esc_attr($details['title']); ?>">
@@ -96,7 +96,7 @@ function sundown_education_markup($post)
 
     <div class="field">
       <div class="field-label has-text-left">
-        <label class="label"><?php echo __('Start'); ?></label>
+        <label class="label"><?php _e('Start', 'sundown'); ?></label>
       </div>
       <div class="field-body">
         <input type="text" name="sundown_education[start]" class="input" value="<?php echo esc_attr($details['start']); ?>">
@@ -105,7 +105,7 @@ function sundown_education_markup($post)
 
     <div class="field">
       <div class="field-label has-text-left">
-        <label class="label"><?php echo __('End'); ?></label>
+        <label class="label"><?php _e('End', 'sundown'); ?></label>
       </div>
       <div class="field-body">
         <input type="text" name="sundown_education[end]" class="input" value="<?php echo esc_attr($details['end']); ?>">
@@ -114,7 +114,7 @@ function sundown_education_markup($post)
 
     <div class="field">
       <div class="field-label has-text-left">
-        <label class="label"><?php echo __('Description'); ?></label>
+        <label class="label"><?php _e('Description', 'sundown'); ?></label>
       </div>
       <div class="field-body">
         <textarea name="sundown_education[description]" class="textarea"><?php echo esc_attr($details['description']); ?></textarea>
@@ -143,7 +143,7 @@ function sundown_employment_markup($post)
 
     <div class="field">
       <div class="field-label has-text-left">
-        <label class="label"><?php echo __('Employment'); ?></label>
+        <label class="label"><?php _e('Employment', 'sundown'); ?></label>
       </div>
       <div class="field-body">
         <input type="text" name="sundown_employment[title]" class="input" value="<?php echo esc_attr($details['title']); ?>">
@@ -152,7 +152,7 @@ function sundown_employment_markup($post)
 
     <div class="field">
       <div class="field-label has-text-left">
-        <label class="label"><?php echo __('Start'); ?></label>
+        <label class="label"><?php _e('Start', 'sundown'); ?></label>
       </div>
       <div class="field-body">
         <input type="text" name="sundown_employment[start]" class="input" value="<?php echo esc_attr($details['start']); ?>">
@@ -161,7 +161,7 @@ function sundown_employment_markup($post)
 
     <div class="field">
       <div class="field-label has-text-left">
-        <label class="label"><?php echo __('End'); ?></label>
+        <label class="label"><?php _e('End', 'sundown'); ?></label>
       </div>
       <div class="field-body">
         <input type="text" name="sundown_employment[end]" class="input" value="<?php echo esc_attr($details['end']); ?>">
@@ -170,7 +170,7 @@ function sundown_employment_markup($post)
 
     <div class="field">
       <div class="field-label has-text-left">
-        <label class="label"><?php echo __('Description'); ?></label>
+        <label class="label"><?php _e('Description', 'sundown'); ?></label>
       </div>
       <div class="field-body">
         <textarea name="sundown_employment[description]" class="textarea"><?php echo esc_attr($details['description']); ?></textarea>
@@ -199,7 +199,7 @@ function sundown_project_markup($post)
 
     <div class="field">
       <div class="field-label has-text-left">
-        <label class="label"><?php echo __('Project'); ?></label>
+        <label class="label"><?php _e('Project', 'sundown'); ?></label>
       </div>
       <div class="field-body">
         <input type="text" name="sundown_project[title]" class="input" value="<?php echo esc_attr($details['title']); ?>">
@@ -208,7 +208,7 @@ function sundown_project_markup($post)
 
     <div class="field">
       <div class="field-label has-text-left">
-        <label class="label"><?php echo __('Description'); ?></label>
+        <label class="label"><?php _e('Description', 'sundown'); ?></label>
       </div>
       <div class="field-body">
         <textarea name="sundown_project[description]" class="textarea is-grey"><?php echo esc_attr($details['description']); ?></textarea>
@@ -217,7 +217,7 @@ function sundown_project_markup($post)
 
     <div class="field">
       <div class="field-label has-text-left">
-        <label class="label"><?php echo __('Github URL'); ?></label>
+        <label class="label"><?php _e('Github URL', 'sundown'); ?></label>
       </div>
       <div class="field-body">
         <input type="url" name="sundown_project[github]" class="input" value="<?php echo esc_attr($details['github']); ?>">
@@ -226,7 +226,7 @@ function sundown_project_markup($post)
 
     <div class="field">
       <div class="field-label has-text-left">
-        <label class="label"><?php echo __('Preview URL'); ?></label>
+        <label class="label"><?php _e('Preview URL', 'sundown'); ?></label>
       </div>
       <div class="field-body">
         <input type="url" name="sundown_project[preview]" class="input" value="<?php echo esc_attr($details['preview']); ?>">

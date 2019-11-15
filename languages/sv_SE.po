@@ -1,0 +1,87 @@
+# Translation of WordPress theme Sundown Portfolio in Swedish
+# This file is distributed under the same license as the WordPress - 5.3.9 - Development package.
+
+
+#: 404.php:13
+msgid "Can't find the page... but have some cake instead!"
+msgstr "Kan inte hitta sidan... men ta lite tårta istället!"
+
+#: footer.php:9
+msgid "theme"
+msgstr "tema"
+
+#: footer.php:11
+msgid "developed by"
+msgstr "utvecklat av"
+
+#: template-projects.php:4
+msgid "Projects"
+msgstr "Projekt"
+
+#: template-cv.php:17
+msgid "Employments"
+msgstr "Anställningar"
+
+#: template-cv.php:25
+msgid "Educations"
+msgstr "Utbildningar"
+
+#: functions/custom_meta.php:17
+msgid "Education"
+msgstr "Utbildning"
+
+#: functions/custom_meta.php:25
+msgid "Employment"
+msgstr "Anställning"
+
+#: functions/custom_meta.php:33
+msgid "Project"
+msgstr "Projekt"
+
+#: functions/custom_meta.php:99
+msgid "Start"
+msgstr "Start"
+
+#: functions/custom_meta.php:109
+msgid "End"
+msgstr "Slut"
+
+#: functions/custom_meta.php:117
+msgid "Description"
+msgstr "Beskrivning"
+
+#: functions/custom_meta.php:220
+msgid "Github URL"
+msgstr "Github-länk"
+
+#: functions/custom_meta.php:229
+msgid "Preview URL"
+msgstr "Förhandsvisnings-länk"
+
+#: functions/customizer.php:18
+msgid "Navigation image"
+msgstr "Navigations bild"
+
+#: functions/menus.php:9
+msgid "Primary Menu"
+msgstr "Primär Meny"
+
+#: functions/menus.php:10
+msgid "Social Media Menu"
+msgstr "Social Media Meny"
+
+#: functions/gutenberg.php:16
+msgid "Title"
+msgstr "Rubrik"
+
+#: functions/gutenberg.php:17
+msgid "Sub title"
+msgstr "Underrubrik"
+
+#: functions/gutenberg.php:18
+msgid "Button text"
+msgstr "Knapp text"
+
+#: functions/gutenberg.php:19
+msgid "Button link"
+msgstr "Knapp länk"

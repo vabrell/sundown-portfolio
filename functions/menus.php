@@ -6,8 +6,8 @@
 
 function sundown_register_menus() {
   register_nav_menus([
-    'primary_menu' => __('Primary Menu'),
-    'social_menu' => __('Social Media Menu')
+    'primary_menu' => __('Primary Menu', 'sundown'),
+    'social_menu' => __('Social Media Menu', 'sundown')
   ]);
 }
 

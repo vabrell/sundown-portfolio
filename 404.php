@@ -10,7 +10,7 @@ get_header();
   </h1>
   <h2 class="subtitle is-4">
     <?php
-    echo __("Can't find the page... but have some cake instead!")
+    _e("Can't find the page... but have some cake instead!", 'sundown')
     ?>
     </h2>
 </section>

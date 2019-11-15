@@ -6,10 +6,10 @@
       ?>
 
       <p class="copyright">
-        Wordpress Theme <a href="https://github.com/vabrell/sundown-portfolio">Sundown-Portfolio</a>
-        <p>
-          © <a href="https://abrell.se">Victor Abrell</a> 2019
-        </p>
+        WordPress <?php _e('theme', 'sundown'); ?>
+        <a href="https://github.com/vabrell/sundown-portfolio">Sundown-Portfolio</a>
+        <?php _e('developed by', 'sundown'); ?>
+        <a href="https://abrell.se">Victor Abrell</a>
       </p>
     </div>
   </footer>

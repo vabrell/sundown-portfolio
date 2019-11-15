@@ -9,6 +9,9 @@ add_action('init', 'sundown_register_menus');
 add_action('init', 'sundown_register_post_types');
 add_action('init', 'sundown_register_gutenberg_blocks');
 
+// After setup
+add_action('after_setup_theme', 'sundown_load_textdomain');
+
 // Styles
 add_action('wp_enqueue_scripts', 'sundown_enqueue_styles');
 add_action('wp_enqueue_scripts', 'sundown_enqueue_scripts');

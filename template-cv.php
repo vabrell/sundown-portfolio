@@ -14,7 +14,7 @@ get_header();
           <span class="icon is-small">
             <i class="mdi mdi-24px mdi-briefcase"></i>
           </span>
-          <span class="is-size-7"><?php echo __('Employments'); ?></span>
+          <span class="is-size-7"><?php _e('Employments', 'sundown'); ?></span>
         </a>
       </li>
       <li role="button" data-target="education">
@@ -22,7 +22,7 @@ get_header();
           <span class="icon is-small">
             <i class="mdi mdi-24px mdi-school"></i>
           </span>
-          <span class="is-size-7"><?php echo _e('Education'); ?></span>
+          <span class="is-size-7"><?php _e('Educations', 'sundown'); ?></span>
         </a>
       </li>
     </ul>
