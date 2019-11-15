@@ -21,5 +21,8 @@ require 'functions/support.php';
 // Get theme filters
 require 'functions/filters.php';
 
+// Get theme gutenberg blocks
+require 'functions/gutenberg.php';
+
 // Get theme actions
 require 'functions/actions.php';

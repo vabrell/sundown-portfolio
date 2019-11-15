@@ -3,7 +3,7 @@ get_header();
 ?>
 
   <section class="hero">
-    <div class="hero-body">
+    <!-- <div class="hero-body">
       <div class="container">
         <h1 class="title has-text-centered">
           Victor Abrell
@@ -18,7 +18,17 @@ get_header();
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+
+    <?php
+    if (have_posts()) {
+      while (have_posts()) {
+        the_post();
+
+        the_content();
+      }
+    }
+    ?>
   </section>
 
 <?php
