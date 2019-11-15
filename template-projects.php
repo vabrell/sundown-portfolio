@@ -54,7 +54,7 @@ get_header();
             </div>
 
             <div class="card-footer">
-              <a href="<?php echo $project_meta['github']; ?>" title="Source Code" target="_blank">
+              <a href="<?php echo $project_meta['github']; ?>" title="<?php _e('Source code', 'sundown'); ?>" target="_blank">
                 <span class="icon is-large">
                   <i class="mdi mdi-24px mdi-github-circle"></i>
                 </span>
@@ -67,7 +67,7 @@ get_header();
                 <?php
                   } else {
                     ?>
-                <span title="Preview">
+                <span title="<?php _e('Preview', 'sundown'); ?>">
                 <?php
                     }
                     ?>
