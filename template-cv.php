@@ -46,10 +46,10 @@ get_header();
 
         if (!empty($post_meta['end'])) {
           $end = ' - ' . $post_meta['end'];
-          $color = 'is-primary';
+          $color = 'is-success';
         } else {
           $end = '';
-          $color = 'is-success';
+          $color = 'is-warning';
         }
     ?>
       <div class="timeline-item">
@@ -92,10 +92,10 @@ get_header();
 
           if (!empty($post_meta['end'])) {
             $end = ' - ' . $post_meta['end'];
-            $color = 'is-primary';
+            $color = 'is-success';
           } else {
             $end = '';
-            $color = 'is-success';
+            $color = 'is-warning';
           }
       ?>
         <div class="timeline-item">
