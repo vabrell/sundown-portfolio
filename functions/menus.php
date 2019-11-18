@@ -41,7 +41,7 @@ function sundown_social_menu($is_inline = false) {
       
       switch ($url) {
         case (preg_match('/facebook/', $url) ? true : false):
-          $icon = 'mdi-facebook';
+          $icon = 'mdi-facebook-box';
         break;
   
         case (preg_match('/instagram/', $url) ? true : false):
@@ -49,7 +49,7 @@ function sundown_social_menu($is_inline = false) {
         break;
   
         case (preg_match('/linkedin/', $url) ? true : false):
-          $icon = 'mdi-linkedin';
+          $icon = 'mdi-linkedin-box';
         break;
   
         case (preg_match('/twitter/', $url) ? true : false):
@@ -62,6 +62,10 @@ function sundown_social_menu($is_inline = false) {
   
         case (preg_match('/spotify/', $url) ? true : false):
           $icon = 'mdi-spotify';
+        break;
+  
+        case (preg_match('/gitlab/', $url) ? true : false):
+          $icon = 'mdi-gitlab';
         break;
   
         default:
