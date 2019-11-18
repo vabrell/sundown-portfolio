@@ -61,7 +61,7 @@
         })
       }
 
-      return el('div', {
+      return el('section', {
         className: 'hero',
         children: el('div', {
           className: 'hero-body',
@@ -122,7 +122,7 @@
       })
     },
     save: function(props) {
-      return el('div', {
+      return el('section', {
         className: 'hero',
         children: el('div', {
           className: 'hero-body',
