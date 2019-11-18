@@ -38,7 +38,7 @@
 
       <div class="navbar-end">
         <?php
-        sundown_social_menu();
+        sundown_social_menu(true);
         ?>
       </div>
 
