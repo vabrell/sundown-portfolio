@@ -324,7 +324,7 @@ function sundown_skill_markup($post)
     'R'           => 'mdi-language-r',
     'Ruby'        => 'mdi-language-ruby',
     'TypeScript'  => 'mdi-language-typescript',
-    'PowerShell'  => 'mdi-language-powershell'
+    'PowerShell'  => 'mdi-powershell'
   ];
 
   ksort($skill_list);
