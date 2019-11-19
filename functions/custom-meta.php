@@ -42,6 +42,16 @@ function sundown_register_meta_boxes()
     'sundown_skill_markup',
     'skill'
   );
+
+  // Profile
+  if (get_page_template_slug() === 'template-about.php') {
+    add_meta_box(
+      'sundown_profile',
+      __('Profile', 'sundown'),
+      'sundown_profile_markup',
+      'page'
+    );
+  }
 }
 
 /**
@@ -84,6 +94,18 @@ function sundown_skill_defaults()
     'title' => '',
     'icon' => 'mdi-angular',
     'progress' => '',
+  ];
+}
+
+function sundown_profile_defaults() {
+  return [
+    'summary' => '',
+    'name' => '',
+    'location' => '',
+    'dob' => '',
+    'job' => '',
+    'email' => '',
+    'skill_summary' => ''
   ];
 }
 
@@ -376,6 +398,86 @@ function sundown_skill_markup($post)
   wp_nonce_field('sundown_form_metabox_nonce', 'sundown_form_metabox_process');
 }
 
+// Profile markup
+function sundown_profile_markup($post) {
+  $saved_data = get_post_meta($post->ID, 'sundown_profile', true);
+  $defaults = sundown_profile_defaults();
+  $details = wp_parse_args($saved_data, $defaults);
+  ?>
+
+  <fieldset>
+
+  <div class="field">
+    <div class="field-label has-text-left">
+      <label class="label"><?php _e('Short description about me', 'sundown'); ?></label>
+    </div>
+    <div class="field-body">
+      <textarea name="sundown_profile[summary]" class="textarea"><?php echo esc_attr($details['summary']); ?></textarea>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="field-label has-text-left">
+      <label class="label"><?php _e('Name', 'sundown'); ?></label>
+    </div>
+    <div class="field-body">
+      <input class="input" type="text" name="sundown_profile[name]" value="<?php echo esc_attr($details['name']); ?>">
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="field-label has-text-left">
+      <label class="label"><?php _e('Current location', 'sundown'); ?></label>
+    </div>
+    <div class="field-body">
+      <input class="input" type="text" name="sundown_profile[location]" value="<?php echo esc_attr($details['location']); ?>">
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="field-label has-text-left">
+      <label class="label"><?php _e('Date of birth', 'sundown'); ?></label>
+    </div>
+    <div class="field-body">
+      <input class="input" type="text" name="sundown_profile[dob]" value="<?php echo esc_attr($details['dob']); ?>">
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="field-label has-text-left">
+      <label class="label"><?php _e('Current job', 'sundown'); ?></label>
+    </div>
+    <div class="field-body">
+      <input class="input" type="text" name="sundown_profile[job]" value="<?php echo esc_attr($details['job']); ?>">
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="field-label has-text-left">
+      <label class="label"><?php _e('E-mail', 'sundown'); ?></label>
+    </div>
+    <div class="field-body">
+      <input class="input" type="text" name="sundown_profile[email]" value="<?php echo esc_attr($details['email']); ?>">
+    </div>
+  </div>
+
+
+  <div class="field">
+    <div class="field-label has-text-left">
+      <label class="label"><?php _e('Short description of my skills', 'sundown'); ?></label>
+    </div>
+    <div class="field-body">
+      <textarea name="sundown_profile[skill_summary]" class="textarea"><?php echo esc_attr($details['skill_summary']); ?></textarea>
+    </div>
+  </div>
+
+  </fieldset>
+
+  <?php
+  // Security field
+  wp_nonce_field('sundown_form_metabox_nonce', 'sundown_form_metabox_process');
+}
+
 /**
  * Save data
  */
@@ -538,4 +640,44 @@ function sundown_save_skill($post_id, $post)
   }
   // Save our submissions to the database
   update_post_meta($post->ID, 'sundown_skill', $sanitized);
+}
+
+// Profile save
+function sundown_save_profile($post_id, $post)
+{
+
+  // Verify that our security field exists. If not, bail.
+  if (!isset($_POST['sundown_form_metabox_process'])) return;
+
+  // Verify data came from edit/dashboard screen
+  if (!wp_verify_nonce($_POST['sundown_form_metabox_process'], 'sundown_form_metabox_nonce')) {
+    return $post->ID;
+  }
+  // Verify user has permission to edit post
+  if (!current_user_can('edit_post', $post->ID)) {
+    return $post->ID;
+  }
+
+  // Check that our custom fields are being passed along
+  // This is the `name` value array. We can grab all
+  // of the fields and their values at once.
+  if (!isset($_POST['sundown_profile'])) {
+    return $post->ID;
+  }
+  /**
+   * Sanitize all data
+   * This keeps malicious code out of our database.
+   */
+  // Set up an empty array
+  $sanitized = array();
+  // Loop through each of our fields
+
+  foreach ($_POST['sundown_profile'] as $key => $detail) {
+    // Sanitize the data and push it to our new array
+    // `wp_filter_post_kses` strips our dangerous server values
+    // and allows through anything you can include a post.
+    $sanitized[$key] = wp_filter_post_kses($detail);
+  }
+  // Save our submissions to the database
+  update_post_meta($post->ID, 'sundown_profile', $sanitized);
 }

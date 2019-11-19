@@ -34,6 +34,10 @@ msgstr "Anställningar"
 msgid "Educations"
 msgstr "Utbildningar"
 
+#: template-about:php:3
+msgid "About me"
+msgstr "Om mig"
+
 #: functions/custom_meta.php:17
 msgid "Education"
 msgstr "Utbildning"
@@ -102,6 +106,10 @@ msgstr "Kompetens"
 msgid "Skills"
 msgstr "Kompetenser"
 
+#: functions/custom-meta:50
+msgid "Profile"
+msgstr "Profil"
+
 #: functions/custom-meta.php:285
 msgid "Icon"
 msgstr "Ikon"
@@ -109,3 +117,31 @@ msgstr "Ikon"
 #: functions/custom-meta.php:306
 msgid "Progress"
 msgstr "Progress"
+
+#: functions/custom-meta.php:412
+msgid "Short description about me"
+msgstr "Kort beskrivning om mig"
+
+#: functions/custom-meta.php:423
+msgid "Name"
+msgstr "Namn"
+
+#: functions/custom-meta.php:432
+msgid "Current location"
+msgstr "Nuvarade ort"
+
+#: functions/custom-meta.php:441
+msgid "Date of birth"
+msgstr "Födelsedag"
+
+#: functions/custom-meta.php:450
+msgid "Current job"
+msgstr "Nuvarande jobb"
+
+#: functions/custom-meta.php:459
+msgid "E-mail"
+msgstr "E-post"
+
+#: functions/custom-meta.php:469
+msgid "Short description of my skills"
+msgstr "Kort beskrivning om mina kompetenser"
