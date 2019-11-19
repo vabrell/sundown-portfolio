@@ -63,11 +63,11 @@ get_header();
               <?php
               if (!empty($project_meta['preview'])) {
                 ?>
-                <a href="<?php echo $project_meta['preview']; ?>" title="Preview" target="_blank">
+                <a href="<?php echo $project_meta['preview']; ?>" title="<?php _e('Preview', 'sundown'); ?>" target="_blank">
                 <?php
                   } else {
                     ?>
-                <span title="<?php _e('Preview', 'sundown'); ?>">
+                <span>
                 <?php
                     }
                     ?>
