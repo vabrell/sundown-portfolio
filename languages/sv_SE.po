@@ -93,3 +93,19 @@ msgstr "Knapp text"
 #: functions/gutenberg.php:19
 msgid "Button link"
 msgstr "Knapp länk"
+
+#: functions/post-types.php:45
+msgid "Skill"
+msgstr "Kompetens"
+
+#: functions/post-types.php:46
+msgid "Skills"
+msgstr "Kompetenser"
+
+#: functions/custom-meta.php:285
+msgid "Icon"
+msgstr "Ikon"
+
+#: functions/custom-meta.php:306
+msgid "Progress"
+msgstr "Progress"

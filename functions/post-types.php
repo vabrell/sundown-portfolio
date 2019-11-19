@@ -40,4 +40,18 @@ function sundown_register_post_types() {
       'pages' => false
     ]
   ]);
+
+  register_post_type('skill', [
+    'label' => __('Skill', 'sundown'),
+    'labels' => __('Skills', 'sundown'),
+    'public' => true,
+    'menu_icon' => 'dashicons-chart-bar',
+    'supports' => [
+      'title',
+      'thumbnail'
+    ],
+    'rewrite' => [
+      'pages' => false
+    ]
+  ]);
 }

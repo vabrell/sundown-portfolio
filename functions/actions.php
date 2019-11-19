@@ -23,6 +23,7 @@ add_action('add_meta_boxes', 'sundown_register_meta_boxes');
 add_action('save_post', 'sundown_save_education', 1, 2 );
 add_action('save_post', 'sundown_save_employment', 1, 2 );
 add_action('save_post', 'sundown_save_project', 1, 2 );
+add_action('save_post', 'sundown_save_skill', 1, 2 );
 
 // Customizer
 add_action('customize_register', 'sundown_customize_register');

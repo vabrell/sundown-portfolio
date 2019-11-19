@@ -16,7 +16,8 @@ function sundown_admin_style() {
   $post_types = [
     'education',
     'employment',
-    'project'
+    'project',
+    'skill'
   ];
   if (in_array($post_type, $post_types)) {
     wp_enqueue_style(
