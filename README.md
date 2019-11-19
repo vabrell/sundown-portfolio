@@ -1,4 +1,5 @@
 # Sundown Portfolio theme
+[Latest release](https://github.com/vabrell/sundown-portfolio/archive/1.1.0.zip)
 
 ## Projects
 
